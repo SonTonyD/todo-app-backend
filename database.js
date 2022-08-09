@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 
+/* LOCAL
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: "localhost",
@@ -7,6 +8,21 @@ const pool = mysql.createPool({
     password: "ynot6803",
     database: "todo_app",
 });
+*/
+
+/* PROD */
+const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: "eu-cdbr-west-03.cleardb.net",
+    user: "b046fd5f02237c",
+    password: "f423958b",
+    database: "heroku_237552fe2f8e0ed",
+});
+
+
+
+
+
 
 function getTodoListElement(req) {
     let id = req.headers.authorization.slice(0,400);
